@@ -1,3 +1,145 @@
-<script async src="https://cse.google.com/cse.js?cx=e6028293bfc8d405b">
-</script>
-<div class="gcse-search"></div>
+/* Import Remix Icon v3.5.0 */
+@import url("https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif !important;
+  background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e) !important;
+  color: #00f0ff !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chat {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  box-shadow: 0 0 20px #00f0ff66;
+  border-radius: 12px !important;
+  padding: 15px !important;
+  transition: 0.3s ease;
+}
+
+.chat:hover {
+  box-shadow: 0 0 30px #00f0ff;
+}
+
+.post {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: #ffffff !important;
+  border-left: 3px solid #00f0ff;
+  margin-bottom: 10px !important;
+  padding: 10px;
+  border-radius: 8px !important;
+  transition: background 0.3s ease;
+}
+
+.post:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Username with user icon */
+.post-name {
+  color: #ff4081 !important;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 22px;
+}
+
+.post-name::before {
+  content: "\e6b2"; /* ri-user-line */
+  font-family: 'remixicon' !important;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #00f0ff;
+}
+
+/* Mention with @ icon */
+.post-message .mention {
+  color: #ffff00 !important;
+  font-weight: bold !important;
+  position: relative;
+  padding-left: 18px;
+}
+
+.post-message .mention::before {
+  content: "\e727"; /* ri-at-line */
+  font-family: 'remixicon' !important;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #ffff00;
+}
+
+/* Input box styling */
+.message-input {
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: #00f0ff !important;
+  border: 1px solid #00f0ff;
+  padding: 12px 40px 12px 12px !important;
+  border-radius: 6px !important;
+  font-size: 1rem;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Send button icon inside input */
+.message-input::after {
+  content: "\e8b6"; /* ri-send-plane-line */
+  font-family: 'remixicon' !important;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #00f0ff;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Buttons with chat icon */
+.button {
+  background: linear-gradient(135deg, #00f0ff, #ff00ff);
+  border: none !important;
+  color: black !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00f0ff66;
+  transition: 0.3s;
+  position: relative;
+  padding-left: 32px;
+}
+
+.button:hover {
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.button::before {
+  content: "\ec43"; /* ri-chat-3-line */
+  font-family: 'remixicon' !important;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00f0ff;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
