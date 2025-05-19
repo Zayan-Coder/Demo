@@ -1,145 +1,93 @@
-/* Import Remix Icon v3.5.0 */
-@import url("https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css");
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/* Reset and base styles */
 body {
-  font-family: 'Orbitron', sans-serif !important;
-  background: radial-gradient(circle at top left, #0f0c29, #302b63, #24243e) !important;
-  color: #00f0ff !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5ddd5;
 }
 
-.chat {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(0, 255, 255, 0.3) !important;
-  box-shadow: 0 0 20px #00f0ff66;
-  border-radius: 12px !important;
-  padding: 15px !important;
-  transition: 0.3s ease;
-}
-
-.chat:hover {
-  box-shadow: 0 0 30px #00f0ff;
-}
-
-.post {
-  background: rgba(0, 0, 0, 0.6) !important;
-  color: #ffffff !important;
-  border-left: 3px solid #00f0ff;
-  margin-bottom: 10px !important;
-  padding: 10px;
-  border-radius: 8px !important;
-  transition: background 0.3s ease;
-}
-
-.post:hover {
-  background: rgba(0, 0, 0, 0.8) !important;
-}
-
-/* Username with user icon */
-.post-name {
-  color: #ff4081 !important;
-  font-weight: 600;
-  font-size: 1rem;
-  position: relative;
-  padding-left: 22px;
-}
-
-.post-name::before {
-  content: "\e6b2"; /* ri-user-line */
-  font-family: 'remixicon' !important;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #00f0ff;
-}
-
-/* Mention with @ icon */
-.post-message .mention {
-  color: #ffff00 !important;
-  font-weight: bold !important;
-  position: relative;
-  padding-left: 18px;
-}
-
-.post-message .mention::before {
-  content: "\e727"; /* ri-at-line */
-  font-family: 'remixicon' !important;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: #ffff00;
-}
-
-/* Input box styling */
-.message-input {
-  background: rgba(0, 0, 0, 0.5) !important;
-  color: #00f0ff !important;
-  border: 1px solid #00f0ff;
-  padding: 12px 40px 12px 12px !important;
-  border-radius: 6px !important;
-  font-size: 1rem;
-  position: relative;
+/* Container */
+#tlkio {
+  display: flex;
+  height: 100vh;
   width: 100%;
-  box-sizing: border-box;
 }
 
-/* Send button icon inside input */
-.message-input::after {
-  content: "\e8b6"; /* ri-send-plane-line */
-  font-family: 'remixicon' !important;
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: #00f0ff;
-  cursor: pointer;
-  pointer-events: auto;
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  background-color: #f0f0f0;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Buttons with chat icon */
-.button {
-  background: linear-gradient(135deg, #00f0ff, #ff00ff);
-  border: none !important;
-  color: black !important;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 0 10px #00f0ff66;
-  transition: 0.3s;
+/* Chat area */
+.chat-area {
+  width: 70%;
+  background-color: #e5ddd5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #075e54;
+  color: white;
+  padding: 15px;
+  font-size: 1.2em;
+}
+
+/* Messages */
+.messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Message bubbles */
+.message {
+  max-width: 60%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 7.5px;
   position: relative;
-  padding-left: 32px;
+  clear: both;
 }
 
-.button:hover {
-  box-shadow: 0 0 20px #ff00ff;
+.message.sent {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  margin-left: auto;
 }
 
-.button::before {
-  content: "\ec43"; /* ri-chat-3-line */
-  font-family: 'remixicon' !important;
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
+.message.received {
+  background-color: white;
+  align-self: flex-start;
+  margin-right: auto;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 10px;
+/* Input area */
+.input-area {
+  display: flex;
+  padding: 10px;
+  background-color: #f0f0f0;
 }
-::-webkit-scrollbar-thumb {
-  background: #00f0ff;
-  border-radius: 10px;
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
+
+.input-area button {
+  background-color: #075e54;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
 }
